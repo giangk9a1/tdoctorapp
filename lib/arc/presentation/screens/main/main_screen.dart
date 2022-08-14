@@ -42,51 +42,103 @@ class _MainScreenState
     final model = state.model as MainScreenModel;
     final List<BottomNavigationBarItem> items = [
       BottomNavigationBarItem(
-        icon: SvgPicture.asset(ImageAssetPath.icNavHome),
-        activeIcon: SvgPicture.asset(ImageAssetPath.icNavHome,
-            color: theme.colorScheme.primary),
+        icon: SvgPicture.asset(
+          ImageAssetPath.icNavHome,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+        ),
+        activeIcon: SvgPicture.asset(
+          ImageAssetPath.icNavHome,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+          color: theme.colorScheme.primary,
+        ),
         label: TranslationKey.home.tr(),
       ),
       BottomNavigationBarItem(
-        icon: SvgPicture.asset(ImageAssetPath.icNavChat),
-        activeIcon: SvgPicture.asset(ImageAssetPath.icNavChat,
-            color: theme.colorScheme.primary),
+        icon: SvgPicture.asset(
+          ImageAssetPath.icNavChat,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+        ),
+        activeIcon: SvgPicture.asset(
+          ImageAssetPath.icNavChat,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+          color: theme.colorScheme.primary,
+        ),
         label: TranslationKey.chat.tr(),
       ),
       BottomNavigationBarItem(
-        icon: SvgPicture.asset(ImageAssetPath.icNavNotification),
-        activeIcon: SvgPicture.asset(ImageAssetPath.icNavNotification,
-            color: theme.colorScheme.primary),
+        icon: SvgPicture.asset(
+          ImageAssetPath.icNavNotification,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+        ),
+        activeIcon: SvgPicture.asset(
+          ImageAssetPath.icNavNotification,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+          color: theme.colorScheme.primary,
+        ),
         label: TranslationKey.notification.tr(),
       ),
       BottomNavigationBarItem(
-        icon: SvgPicture.asset(ImageAssetPath.icNavProfile),
-        activeIcon: SvgPicture.asset(ImageAssetPath.icNavProfile,
-            color: theme.colorScheme.primary),
+        icon: SvgPicture.asset(
+          ImageAssetPath.icNavProfile,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+        ),
+        activeIcon: SvgPicture.asset(
+          ImageAssetPath.icNavProfile,
+          height: Dimens.size18,
+          width: Dimens.size18,
+          fit: BoxFit.scaleDown,
+          color: theme.colorScheme.primary,
+        ),
         label: TranslationKey.profile.tr(),
       ),
     ];
 
     return WillPopScope(
       child: Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: theme.backgroundColor,
         body: IndexedStack(
           index: model.index ?? 0,
           children: listScreen,
         ),
-        bottomNavigationBar: ClipRRect(
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
-          child: BottomNavigationBar(
-            items: items,
-            currentIndex: model.index ?? 0,
-            showSelectedLabels: true,
-            elevation: 0,
-            showUnselectedLabels: true,
-            selectedLabelStyle: theme.textTheme.caption,
-            unselectedLabelStyle: theme.primaryTextTheme.caption,
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: Theme.of(context).backgroundColor,
-            onTap: (index) => bloc.changePage(index),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: const Offset(0, 3), // changes position of shadow
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
+            child: BottomNavigationBar(
+              items: items,
+              currentIndex: model.index ?? 0,
+              showSelectedLabels: true,
+              elevation: 0,
+              showUnselectedLabels: true,
+              selectedLabelStyle: theme.primaryTextTheme.subtitle1,
+              unselectedLabelStyle: theme.primaryTextTheme.subtitle2,
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Theme.of(context).backgroundColor,
+              onTap: (index) => bloc.changePage(index),
+            ),
           ),
         ),
       ),

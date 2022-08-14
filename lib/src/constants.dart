@@ -48,10 +48,12 @@ class ImageAssetPath {
   static const String icDrugstore = 'assets/images/ic_drugstore.png';
   static const String icHealth = 'assets/images/ic_health.png';
   static const String icAppointment = 'assets/images/ic_appointment.png';
+  static const String icInvite = 'assets/images/ic_invite.png';
 
   //SVG
   static const String icNavHome = 'assets/svgs/ic_home.svg';
   static const String icNavChat = 'assets/svgs/ic_chat.svg';
   static const String icNavNotification = 'assets/svgs/ic_notification.svg';
   static const String icNavProfile = 'assets/svgs/ic_profile.svg';
+  static const String icBack = 'assets/svgs/ic_back.svg';
 }

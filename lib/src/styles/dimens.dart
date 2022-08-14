@@ -98,7 +98,7 @@ class Dimens {
   static const double iconSizeInside = 20.0;
   static const double spacing = 12.0;
   static const int breakpoint = 1920;
-  static const double defaultBorderRadius = 10;
+  static const double defaultBorderRadius = 12;
   static const double cardBorderRadius = 20;
   static const double verticalSpacingBetween = 20.0;
   static const double horizontalSpacingBetween = 90.0;

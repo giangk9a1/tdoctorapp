@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:riverhotel/src/config/route_keys.dart';
+import 'package:riverhotel/translation_key.dart';
 
 import '../../../../src/constants.dart';
+import '../../../../src/styles/style.dart';
 import '../../widgets/widget.dart';
-import '../auth/login_screen.dart';
-import '../auth/register_screen.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -39,45 +40,34 @@ class _IntroScreenState extends State<IntroScreen> {
         child: SafeArea(
           child: Column(
             children: [
-              const SizedBox(height: 100),
-              Image.asset(ImageAssetPath.icIntro),
-              const SizedBox(height: 36),
-              Text(
-                "An tâm sống khoẻ cùng \nTDoctor",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  height: 1.5,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 24,
-                  color: theme.primaryColor,
-                ),
+              const SizedBox(height: Dimens.size100),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: Dimens.size16),
+                child: Image.asset(ImageAssetPath.icIntro),
               ),
-              const SizedBox(height: 12),
-              const Text(
-                "Chăm sóc sức khoẻ và tư vấn miễn phí",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
-                ),
+              const SizedBox(height: Dimens.size36),
+              Text(
+                TranslationKey.slogan.tr(),
+                textAlign: TextAlign.center,
+                style: theme.textTheme.headline1,
+              ),
+              const SizedBox(height: Dimens.size12),
+              Text(
+                TranslationKey.subLogan.tr(),
+                style: theme.textTheme.caption,
               ),
               const Spacer(),
               CustomButton(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LoginScreen())),
-                text: 'Đăng nhập',
+                onTap: () => navigator.pushNamed(RouteKey.login),
+                text: TranslationKey.login.tr(),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.size24),
               CustomButton(
-                color: const Color(0xffFF4852),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RegisterScreen())),
-                text: 'Tạo tài khoản',
+                color: MyColors.errorColor,
+                onTap: () => navigator.pushNamed(RouteKey.register),
+                text: TranslationKey.createAccount.tr(),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.size24),
             ],
           ),
         ),

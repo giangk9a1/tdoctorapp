@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class MyColors {
   MyColors._();
 
-  static const Color primaryColor = Color.fromRGBO(89, 39, 255, 1);
-  static const Color secondaryColor = Color.fromRGBO(2, 34, 64, 1);
+  static const Color primaryColor = Color.fromRGBO(8, 148, 217, 1);
+  static const Color secondaryColor = Color.fromRGBO(128, 141, 176, 1);
 
   static const Color red = Color.fromRGBO(255, 38, 38, 1);
 
@@ -59,5 +59,5 @@ class MyColors {
   static const Color black = Color.fromRGBO(0, 0, 0, 1);
   static const Color blackSurface = Color.fromRGBO(17, 17, 31, 1);
 
-  static const Color errorColor = Color.fromRGBO(253, 57, 57, 1);
+  static const Color errorColor = Color.fromRGBO(255, 72, 82, 1);
 }

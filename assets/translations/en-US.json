@@ -1,1 +1,14 @@
-{}
+{
+    "error_common": "An error occurred",
+    "home": "Home",
+    "chat": "Chat",
+    "notification": "Notification",
+    "profile": "Personal",
+    "yes": "Yes",
+    "no": "No",
+    "tap_exit": "Tap again to exit!",
+    "slogan": "Have peace of mind with \nTDoctor",
+    "sub_logan": "Free health care and consultation",
+    "login": "Login",
+    "create_account": "Create an account"
+}

@@ -4,6 +4,7 @@ import 'package:riverhotel/src/config/route_keys.dart';
 
 import '../../../../src/constants.dart';
 
+import '../../../../src/styles/style.dart';
 import '../../widgets/widget.dart';
 import 'forget_password.dart';
 import 'register_screen.dart';
@@ -122,17 +123,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: Dimens.size40),
                   CustomButton(
                       onTap: () => navigator.pushNamed(RouteKey.main),
                       text: 'Đăng nhập'),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: Dimens.size40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(ImageAssetPath.icFacebook),
-                      const SizedBox(width: 16),
-                      Image.asset(ImageAssetPath.icGoogle),
+                      Image.asset(
+                        ImageAssetPath.icFacebook,
+                        height: Dimens.size40,
+                        width: Dimens.size40,
+                      ),
+                      const SizedBox(width: Dimens.size16),
+                      Image.asset(
+                        ImageAssetPath.icGoogle,
+                        height: Dimens.size40,
+                        width: Dimens.size40,
+                      ),
                     ],
                   ),
                   const Spacer(),
@@ -162,10 +171,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: Dimens.size20),
                   const HotlineButton(),
                   SizedBox(
-                    height: MediaQuery.of(context).viewPadding.bottom + 10,
+                    height: MediaQuery.of(context).viewPadding.bottom +
+                        Dimens.size34,
                   )
                 ],
               ),

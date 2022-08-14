@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riverhotel/arc/data/models/data_models/data_models.dart';
+import 'package:riverhotel/arc/presentation/screens/auth/auth.dart';
 import 'package:riverhotel/arc/presentation/screens/main/main_screen.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/common.dart';
 
@@ -13,6 +14,14 @@ class AppRoutes {
         return _materialRoute(const SplashScreen());
       case RouteKey.main:
         return _materialRoute(const MainScreen());
+      case RouteKey.invite:
+        return _materialRoute(const InviteScreen());
+      case RouteKey.login:
+        return _materialRoute(const LoginScreen());
+      case RouteKey.register:
+        return _materialRoute(const RegisterScreen());
+      case RouteKey.intro:
+        return _materialRoute(const IntroScreen());
       default:
         return _materialRoute(const PageNotFound());
     }

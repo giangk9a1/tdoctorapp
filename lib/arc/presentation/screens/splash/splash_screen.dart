@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:riverhotel/arc/presentation/widgets/commons/dialog.dart';
+import 'package:riverhotel/src/config/config.dart';
 
 import '../../../../src/constants.dart';
-import '../intro/intro_screen.dart';
+import '../../../../src/styles/style.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,9 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-        const Duration(seconds: 2),
-        () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const IntroScreen())));
+      const Duration(seconds: 2),
+      () => navigator.pushNamed(RouteKey.intro),
+    );
   }
 
   @override
@@ -25,7 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
     final theme = Theme.of(context);
     return Container(
       color: theme.backgroundColor,
-      child: Center(child: Image.asset(ImageAssetPath.icSplash)),
+      child: Center(
+        child: Image.asset(
+          ImageAssetPath.icSplash,
+          height: Dimens.size60,
+        ),
+      ),
     );
   }
 }

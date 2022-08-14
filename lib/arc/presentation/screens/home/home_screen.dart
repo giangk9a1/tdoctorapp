@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/common.dart';
+import 'package:riverhotel/src/config/route_keys.dart';
 import 'package:riverhotel/src/constants.dart';
+import 'package:riverhotel/translation_key.dart';
 
+import '../../../../src/styles/style.dart';
 import 'home.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,100 +25,128 @@ class _HomeScreenState extends State<HomeScreen> {
             color: theme.primaryColor,
             child: Column(
               children: [
-                const SizedBox(height: 40),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text("Mời bạn bè và nhận thêm"),
-                        Text("100.000Đ tiền thưởng!"),
-                      ],
-                    ),
-                    const Spacer(),
-                    CustomButton(
-                      onTap: () {},
-                      text: 'Mời bạn bè',
-                      width: 100,
-                    )
-                  ],
+                const SizedBox(height: 50),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: Dimens.size16),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            TranslationKey.inviteTitle.tr(),
+                            style: theme.textTheme.subtitle1,
+                          ),
+                          const SizedBox(height: Dimens.size6),
+                          Text(
+                            TranslationKey.inviteDescription.tr(),
+                            style: theme.textTheme.headline4,
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      GestureDetector(
+                          onTap: () => navigator.pushNamed(RouteKey.invite),
+                          child: Container(
+                            height: Dimens.size32,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: Dimens.size20),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                color: theme.backgroundColor,
+                                borderRadius: BorderRadius.circular(
+                                    Dimens.defaultBorderRadius)),
+                            child: Text(
+                              TranslationKey.inviteFriend.tr(),
+                              style: theme.textTheme.button,
+                            ),
+                          ))
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: Dimens.size20),
                 Container(
                   decoration: BoxDecoration(
                       color: theme.backgroundColor,
                       borderRadius: const BorderRadius.vertical(
-                          top: Radius.circular(10))),
+                          top: Radius.circular(30))),
                   child: Column(
                     children: [
-                      const SizedBox(height: 20),
+                      const SizedBox(height: Dimens.size20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           ItemFeature(
-                            color: Colors.blue,
+                            onTap: () {},
+                            color: Color(0xff5DCEC1),
                             image: ImageAssetPath.icBackview,
-                            text: 'Xét nghiệm \ntại nhà',
+                            text: TranslationKey.menuTestHome.tr(),
                           ),
                           ItemFeature(
-                            color: Colors.blue,
+                            onTap: () {},
+                            color: Color(0xff518FEC),
                             image: ImageAssetPath.icHealthcare,
-                            text: 'Kết quả \nxét nghiệm',
+                            text: TranslationKey.menuResult.tr(),
                           ),
                           ItemFeature(
-                            color: Colors.blue,
+                            onTap: () {},
+                            color: Color(0xffFB73AF),
+                            spacing: 10,
                             image: ImageAssetPath.icProfessional,
-                            text: 'Phòng tư vấn \ntrực tuyến',
+                            text: TranslationKey.menuOnline.tr(),
                           )
                         ],
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: Dimens.size32),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           ItemMenu(
+                            onTap: () {},
                             image: ImageAssetPath.icDoctorHome,
-                            text: 'Hẹn bác sĩ \nđến nhà',
+                            text: TranslationKey.menuHome.tr(),
                           ),
                           ItemMenu(
+                            onTap: () {},
                             image: ImageAssetPath.icDoctorVideo,
-                            text: 'Gọi video \nvới bác sĩ',
+                            text: TranslationKey.menuVideo.tr(),
                           ),
                           ItemMenu(
+                            onTap: () {},
                             image: ImageAssetPath.icDoctorChat,
-                            text: 'Chat miễn phí \nvới bác sĩ',
+                            text: TranslationKey.menuChat.tr(),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: Dimens.size32),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           ItemMenu(
+                            onTap: () {},
                             image: ImageAssetPath.icAppointment,
-                            text: 'Đặt hẹn tại \nphòng khám',
+                            text: TranslationKey.menuAppointment.tr(),
                           ),
                           ItemMenu(
+                            onTap: () {},
                             image: ImageAssetPath.icDrugstore,
-                            text: 'Nhà thuốc \ntrực tuyến',
+                            text: TranslationKey.menuDrugstore.tr(),
                           ),
                           ItemMenu(
+                            onTap: () {},
                             image: ImageAssetPath.icHealth,
-                            text: 'Theo dõi \nsức khoẻ',
+                            text: TranslationKey.menuHealth.tr(),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: Dimens.size32),
                     ],
                   ),
                 ),
               ],
             ),
           ),
-          Container(
-            height: 10,
-            color: Colors.red.withOpacity(0.1),
-          ),
+          Container(height: 10, color: Color(0xffF0F5FA)),
+          const SizedBox(height: Dimens.size16),
           const BannerHome()
         ],
       ),

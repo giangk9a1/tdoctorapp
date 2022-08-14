@@ -6,6 +6,21 @@
     "profile": "Cá nhân",
     "yes": "Có",
     "no": "Không",
-    "tap_exit": "Chạm lần nữa để thoát!"
-
+    "tap_exit": "Chạm lần nữa để thoát!",
+    "slogan": "An tâm sống khoẻ cùng \nTDoctor",
+    "sub_logan": "Chăm sóc sức khoẻ và tư vấn miễn phí",
+    "login": "Đăng nhập",
+    "create_account": "Tạo tài khoản",
+    "invite_title": "MỜI BẠN BÈ VÀ NHẬN THÊM",
+    "invite_description": "100.000Đ tiền thưởng!",
+    "invite_friend": "Mời bạn bè",
+    "menu_test_home": "Xét nghiệm \ntại nhà",
+    "menu_result": "Kết quả \nxét nghiệm",
+    "menu_online": "Phòng tư vấn \ntrực tuyến",
+    "menu_home": "Hẹn bác sĩ \nđến nhà",
+    "menu_video": "Gọi video \nvới bác sĩ",
+    "menu_chat": "Chat miễn phí \nvới bác sĩ",
+    "menu_appointment": "Đặt hẹn tại \nphòng khám",
+    "menu_drugstore": "Nhà thuốc \ntrực tuyến",
+    "menu_health": "Theo dõi \nsức khoẻ"
 }
