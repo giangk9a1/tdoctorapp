@@ -81,7 +81,7 @@ class MyTheme {
           height: 1.5,
           fontWeight: FontWeight.w800,
           fontSize: 24,
-          color: MyColors.whiteColor,
+          color: MyColors.primaryColor,
         ),
         headline2: TextStyle(
           fontFamily: roboto,
