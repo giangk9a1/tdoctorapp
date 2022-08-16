@@ -18,18 +18,14 @@ class AppConfig {
 
   late AppEnvironment appEnvironment;
   late String apiEndpoint;
-  late String apiGGMapKey;
 
   // Set app configuration with single function
   void setAppConfig({
     required AppEnvironment appEnvironment,
     required String apiEndpoint,
-    required String apiGGMapKey,
   }) {
     this.appEnvironment = appEnvironment;
     this.apiEndpoint = apiEndpoint;
-    this.apiGGMapKey = apiGGMapKey;
-
     configApp();
   }
 

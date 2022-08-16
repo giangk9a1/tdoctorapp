@@ -1,0 +1,3 @@
+class RegisterScreenModel {}
+
+class RegisterScreenParam {}

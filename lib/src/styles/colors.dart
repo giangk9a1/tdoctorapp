@@ -39,7 +39,7 @@ class MyColors {
   static const Color violet = Color.fromRGBO(134, 38, 118, 1);
 
   static const Color green = Color.fromRGBO(55, 227, 159, 1);
-  static const Color grey = Color.fromRGBO(233, 234, 235, 1);
+  static const Color grey = Color.fromRGBO(128, 141, 176, 1);
   static const Color colorSwitch = Color.fromRGBO(134, 38, 118, 1);
   static const Color colorInactiveSwitch = Color.fromRGBO(234, 234, 234, 1);
 

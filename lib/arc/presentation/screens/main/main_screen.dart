@@ -27,7 +27,7 @@ class _MainScreenState
     const HomeScreen(),
     const ChatScreen(),
     Container(),
-    Container(),
+    const ProfileScreen(),
   ];
 
   @override

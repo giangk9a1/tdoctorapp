@@ -1,0 +1,3 @@
+class SplashScreenModel {}
+
+class SplashScreenParam {}

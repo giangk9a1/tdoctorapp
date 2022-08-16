@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:riverhotel/src/constants.dart';
-import 'package:riverhotel/src/extensions/extension.dart';
 import 'package:riverhotel/src/styles/dimens.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -39,7 +38,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
         statusBarBrightness: Brightness.dark, // For iOS (dark icons)
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       leading: hasLeading
           ? leading ??
               GestureDetector(

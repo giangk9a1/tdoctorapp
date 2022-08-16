@@ -58,13 +58,14 @@ class _IntroScreenState extends State<IntroScreen> {
               ),
               const Spacer(),
               CustomButton(
-                onTap: () => navigator.pushNamed(RouteKey.login),
+                onTap: () => navigator.pushNamedAndRemoveUntil(RouteKey.login),
                 text: TranslationKey.login.tr(),
               ),
               const SizedBox(height: Dimens.size24),
               CustomButton(
                 color: MyColors.errorColor,
-                onTap: () => navigator.pushNamed(RouteKey.register),
+                onTap: () =>
+                    navigator.pushNamedAndRemoveUntil(RouteKey.register),
                 text: TranslationKey.createAccount.tr(),
               ),
               const SizedBox(height: Dimens.size24),

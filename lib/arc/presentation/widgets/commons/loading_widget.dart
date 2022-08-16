@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverhotel/src/utilities/utilities.dart';
 
+import '../../../../src/constants.dart';
 import '../../../../src/styles/style.dart';
 
 class LoadingWidget extends StatelessWidget {
@@ -28,10 +29,10 @@ class LoadingWidget extends StatelessWidget {
           width: ResponsiveLayout.isTablet(context)
               ? size.width * 0.2
               : size.width * 0.3,
-          // child: Image.asset(
-          //   ImageAssetPath.loadingCircle,
-          //   fit: BoxFit.contain,
-          // ),
+          child: Image.asset(
+            ImageAssetPath.loadingDot,
+            fit: BoxFit.contain,
+          ),
         ),
       ),
     );

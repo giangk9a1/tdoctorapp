@@ -20,6 +20,9 @@ class PreferenceKeys {
   static const String seen = 'SEEN';
   static const String colorMode = 'COLORMODE';
   static const String language = 'LANGUAGE';
+  static const String remember = 'REMEMBER';
+  static const String username = 'USERNAME';
+  static const String password = 'PASSWORD';
 }
 
 class ImageAssetPath {
@@ -56,4 +59,8 @@ class ImageAssetPath {
   static const String icNavNotification = 'assets/svgs/ic_notification.svg';
   static const String icNavProfile = 'assets/svgs/ic_profile.svg';
   static const String icBack = 'assets/svgs/ic_back.svg';
+  static const String icCopy = 'assets/svgs/ic_copy.svg';
+
+  //GIF
+  static const String loadingDot = 'assets/gifs/loading_dot.gif';
 }

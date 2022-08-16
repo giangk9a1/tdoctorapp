@@ -1,30 +1,53 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:riverhotel/arc/presentation/blocs/blocs.dart';
 import 'package:riverhotel/src/config/route_keys.dart';
 
+import '../../../../src/base_widget_state/base_cubit_stateful_widget.dart';
+import '../../../../src/bloc/bloc.dart';
 import '../../../../src/constants.dart';
 
 import '../../../../src/styles/style.dart';
+import '../../../data/models/models.dart';
+import '../../models/models.dart';
 import '../../widgets/widget.dart';
 import 'forget_password.dart';
 import 'register_screen.dart';
 import 'widgets/hotline_button.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends BaseCubitStatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  bool isRemember = false;
+class _LoginScreenState
+    extends BaseCubitStateFulWidgetState<LoginBloc, LoginScreen> {
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  void listener(BuildContext context, BaseState state) {
+    super.listener(context, state);
+    if (state is LoadedState) {
+      final model = state.model as LoginScreenModel;
+      if (model.isRemember ?? false) {
+        appPreference.username.then(
+            (value) => _phoneController.text = value ?? _phoneController.text);
+        appPreference.password.then((value) =>
+            _passwordController.text = value ?? _phoneController.text);
+      }
+    }
+  }
+
+  @override
+  Widget buildContent(BuildContext context, state) {
     final size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
+    final model = state.model as LoginScreenModel;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: theme.primaryColor,
       body: Column(
         children: [
@@ -33,12 +56,12 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.only(left: 16),
             child: Image.asset(
               ImageAssetPath.icLogo,
-              height: 48,
+              height: Dimens.size48,
               width: size.width,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: Dimens.size10),
           Expanded(
             child: Container(
               width: size.width,
@@ -60,12 +83,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 40),
                   CustomTextfield.noBorder(
+                    controller: _phoneController,
                     hindText: 'Nhập số điện thoại',
                     keyboardType: TextInputType.number,
                     preIcon: Image.asset(ImageAssetPath.icUser),
                   ),
                   CustomTextfield.noBorder(
                     isPassword: true,
+                    controller: _passwordController,
                     preIcon: Image.asset(ImageAssetPath.icPassword),
                     hindText: 'Nhập mật khẩu',
                   ),
@@ -93,10 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Row(
                           children: [
                             GestureDetector(
-                              onTap: () {
-                                isRemember = !isRemember;
-                                setState(() {});
-                              },
+                              onTap: () => bloc.changeRemember(),
                               child: AnimatedSwitcher(
                                 duration: const Duration(milliseconds: 500),
                                 transitionBuilder: (Widget child,
@@ -104,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   return ScaleTransition(
                                       scale: animation, child: child);
                                 },
-                                child: isRemember
+                                child: model.isRemember ?? false
                                     ? Image.asset(ImageAssetPath.icChecked)
                                     : Image.asset(ImageAssetPath.icCheck),
                               ),
@@ -125,7 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: Dimens.size40),
                   CustomButton(
-                      onTap: () => navigator.pushNamed(RouteKey.main),
+                      onTap: () => bloc.login(
+                            _phoneController.text,
+                            _passwordController.text,
+                          ),
                       text: 'Đăng nhập'),
                   const SizedBox(height: Dimens.size40),
                   Row(

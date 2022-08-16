@@ -79,19 +79,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           ItemFeature(
                             onTap: () {},
-                            color: Color(0xff5DCEC1),
+                            color: const Color(0xff5DCEC1),
                             image: ImageAssetPath.icBackview,
                             text: TranslationKey.menuTestHome.tr(),
                           ),
                           ItemFeature(
                             onTap: () {},
-                            color: Color(0xff518FEC),
+                            color: const Color(0xff518FEC),
                             image: ImageAssetPath.icHealthcare,
                             text: TranslationKey.menuResult.tr(),
                           ),
                           ItemFeature(
                             onTap: () {},
-                            color: Color(0xffFB73AF),
+                            color: const Color(0xffFB73AF),
                             spacing: 10,
                             image: ImageAssetPath.icProfessional,
                             text: TranslationKey.menuOnline.tr(),
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Container(height: 10, color: Color(0xffF0F5FA)),
+          Container(height: 10, color: const Color(0xffF0F5FA)),
           const SizedBox(height: Dimens.size16),
           const BannerHome()
         ],
