@@ -125,7 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: Dimens.size40),
                   CustomButton(
-                      onTap: () => navigator.pushNamed(RouteKey.main),
+                      // onTap: () => navigator.pushNamed(RouteKey.main),
+                      onTap: () => navigator.pushNamed(RouteKey.clinic),
+                      // onTap: () => navigator.pushNamed(RouteKey.process),
+                      // onTap: () => navigator.pushNamed(RouteKey.reason),
+                      // onTap: () => navigator.pushNamed(RouteKey.profile),
+                      // onTap: () => navigator.pushNamed(RouteKey.list_doctor),
                       text: 'Đăng nhập'),
                   const SizedBox(height: Dimens.size40),
                   Row(

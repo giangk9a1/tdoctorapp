@@ -41,6 +41,23 @@ class ImageAssetPath {
   static const String icProfessional = 'assets/images/ic_professional.png';
   static const String icBackview = 'assets/images/ic_backview.png';
   static const String icBanner1 = 'assets/images/ic_banner1.png';
+  static const String icLoca = 'assets/images/ic_local.png';
+  static const String icClock = 'assets/images/ic_clock.png';
+  //test
+  static const String icDemo = 'assets/images/ic_department1.png';
+  static const String icAvataDor = 'assets/images/ic_profile_doctor.png';
+  static const String icDrop = 'assets/images/ic_drow.png';
+  static const String icPay1 = 'assets/images/ic_pay1.png';
+  static const String icPay2 = 'assets/images/ic_pay2.png';
+  static const String icPay3 = 'assets/images/ic_pay3.png';
+  static const String icLogo1 = 'assets/images/logo1.png';
+  static const String icLogo2 = 'assets/images/logo2.png';
+  static const String icLogo3 = 'assets/images/logo3.png';
+  static const String icLogo4 = 'assets/images/logo4.png';
+  static const String icLogo5 = 'assets/images/logo5.png';
+  static const String icLogo6 = 'assets/images/logo6.png';
+  static const String icTime = 'assets/images/ic_timer.png';
+
 
   static const String icDoctorHome = 'assets/images/ic_doctor_home.png';
   static const String icDoctorVideo = 'assets/images/ic_doctor_video.png';
@@ -50,10 +67,17 @@ class ImageAssetPath {
   static const String icAppointment = 'assets/images/ic_appointment.png';
   static const String icInvite = 'assets/images/ic_invite.png';
 
+
+  static const String icBannerClinic1 = 'assets/images/ic_banner_clinic1.png';
+  static const String icBannerClinic2 = 'assets/images/ic_banner_clinic2.png';
+
   //SVG
   static const String icNavHome = 'assets/svgs/ic_home.svg';
   static const String icNavChat = 'assets/svgs/ic_chat.svg';
   static const String icNavNotification = 'assets/svgs/ic_notification.svg';
   static const String icNavProfile = 'assets/svgs/ic_profile.svg';
   static const String icBack = 'assets/svgs/ic_back.svg';
+
+
+  //
 }
