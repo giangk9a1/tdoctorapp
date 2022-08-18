@@ -147,7 +147,6 @@ class _LoginScreenState
                   ),
                   const SizedBox(height: Dimens.size40),
                   CustomButton(
-                      onTap: () => navigator.pushNamed(RouteKey.main),
                       onTap: () => bloc.login(
                             _phoneController.text,
                             _passwordController.text,
