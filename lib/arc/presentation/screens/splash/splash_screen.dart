@@ -2,28 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/dialog.dart';
 import 'package:riverhotel/src/config/config.dart';
 
+import '../../../../src/base_widget_state/base_cubit_stateful_widget.dart';
 import '../../../../src/constants.dart';
 import '../../../../src/styles/style.dart';
+import '../../blocs/blocs.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends BaseCubitStatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState
+    extends BaseCubitStateFulWidgetState<SplashBloc, SplashScreen> {
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(
-      const Duration(seconds: 2),
-      () => navigator.pushNamed(RouteKey.intro),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget buildContent(BuildContext context, state) {
     final theme = Theme.of(context);
     return Container(
       color: theme.backgroundColor,

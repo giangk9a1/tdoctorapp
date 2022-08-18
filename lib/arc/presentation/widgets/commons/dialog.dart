@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:riverhotel/src/config/route_keys.dart';
 import 'package:riverhotel/src/preferences/app_preference.dart';
 
 import '../../../../../injector.dart';

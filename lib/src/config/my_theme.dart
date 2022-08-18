@@ -53,9 +53,9 @@ class MyTheme {
           ),
           bodyText2: TextStyle(
             fontFamily: roboto,
-            color: Colors.white54,
+            color: Colors.grey,
             fontSize: Dimens.textSize14,
-            fontWeight: FontWeight.w100,
+            fontWeight: FontWeight.w400,
           ),
           caption: TextStyle(
             fontFamily: roboto,
@@ -81,7 +81,7 @@ class MyTheme {
           height: 1.5,
           fontWeight: FontWeight.w800,
           fontSize: 24,
-          color: MyColors.whiteColor,
+          color: MyColors.primaryColor,
         ),
         headline2: TextStyle(
           fontFamily: roboto,
@@ -91,9 +91,9 @@ class MyTheme {
         ),
         headline3: TextStyle(
           fontFamily: roboto,
-          color: MyColors.green,
-          fontSize: Dimens.textSize17,
-          fontWeight: FontWeight.w500,
+          color: MyColors.black,
+          fontSize: Dimens.textSize14,
+          fontWeight: FontWeight.w600,
         ),
         headline5: TextStyle(
           fontFamily: roboto,

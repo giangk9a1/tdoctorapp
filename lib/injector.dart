@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:riverhotel/arc/presentation/blocs/blocs.dart';
+import 'package:riverhotel/arc/presentation/blocs/register_bloc.dart';
 
 import 'package:riverhotel/src/network/network.dart';
 import 'package:riverhotel/src/utilities/utilities.dart';
@@ -21,15 +22,18 @@ class AppDependencies {
   }
 
   static void _initRequest() {
-    //injector.registerLazySingleton<AuthReq>(() => AuthReq());
+    injector.registerLazySingleton<BaseReq>(() => BaseReq());
   }
 
   static void _initServices() {
-    //injector.registerLazySingleton<AuthService>(() => AuthService(injector()));
+    injector.registerLazySingleton<AuthService>(() => AuthService(injector()));
   }
 
   static void _initBlocs() {
     injector.registerFactory<ThemeBloc>(() => ThemeBloc());
     injector.registerFactory<MainBloc>(() => MainBloc());
+    injector.registerFactory<SplashBloc>(() => SplashBloc());
+    injector.registerFactory<LoginBloc>(() => LoginBloc(injector()));
+    injector.registerFactory<RegisterBloc>(() => RegisterBloc(injector()));
   }
 }

@@ -22,19 +22,10 @@ class ThemeBloc extends BaseCubit<ThemeScreenParam, ThemeScreenModel> {
 
   Future<void> initTheme(BuildContext context) async {
     if (latestLoadedState is LoadedState) {
-      final locate = await appPreference.language;
-      final String defaultLocale = Platform.localeName;
-      if (locate == null) {
-        if (defaultLocale == "en_US") {
-          context.setLocale(Constants.languages[1]);
-        } else {
-          context.setLocale(Constants.languages[0]);
-        }
-      } else {
-        final listLanguage = Constants.languages;
-        context.setLocale(listLanguage
-            .firstWhere((element) => element.languageCode == locate));
-      }
+      final locate = await appPreference.language ?? 'vi';
+      final listLanguage = Constants.languages;
+      context.setLocale(
+          listLanguage.firstWhere((element) => element.languageCode == locate));
       bool isDarkMode = false;
       final color = await appPreference.colorMode;
       if (color == 'dark') {

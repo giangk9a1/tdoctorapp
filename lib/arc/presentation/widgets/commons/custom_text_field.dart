@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../src/constants.dart';
+import '../../../../src/styles/style.dart';
 
 class CustomTextfield extends StatefulWidget {
   final double? paddingHor;
@@ -118,7 +119,11 @@ class _CustomTextfieldState extends State<CustomTextfield> {
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
               ),
-              prefixIcon: widget.preIcon,
+              isDense: true,
+              prefixIcon: Padding(
+                padding: const EdgeInsets.only(right: Dimens.size10),
+                child: widget.preIcon,
+              ),
               suffixIcon: widget.suffixIcon ??
                   (widget.isPassword
                       ? InkWell(
@@ -145,6 +150,8 @@ class _CustomTextfieldState extends State<CustomTextfield> {
               filled: !widget.noBorder,
               border: InputBorder.none,
               counterText: '',
+              prefixIconConstraints: const BoxConstraints(
+                  minWidth: Dimens.size26, maxHeight: Dimens.size26),
               contentPadding: widget.noBorder
                   ? const EdgeInsets.symmetric(vertical: 10)
                   : const EdgeInsets.all(10),

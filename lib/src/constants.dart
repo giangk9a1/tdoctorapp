@@ -20,6 +20,9 @@ class PreferenceKeys {
   static const String seen = 'SEEN';
   static const String colorMode = 'COLORMODE';
   static const String language = 'LANGUAGE';
+  static const String remember = 'REMEMBER';
+  static const String username = 'USERNAME';
+  static const String password = 'PASSWORD';
 }
 
 class ImageAssetPath {
@@ -58,7 +61,6 @@ class ImageAssetPath {
   static const String icLogo6 = 'assets/images/logo6.png';
   static const String icTime = 'assets/images/ic_timer.png';
 
-
   static const String icDoctorHome = 'assets/images/ic_doctor_home.png';
   static const String icDoctorVideo = 'assets/images/ic_doctor_video.png';
   static const String icDoctorChat = 'assets/images/ic_doctor_chat.png';
@@ -66,7 +68,6 @@ class ImageAssetPath {
   static const String icHealth = 'assets/images/ic_health.png';
   static const String icAppointment = 'assets/images/ic_appointment.png';
   static const String icInvite = 'assets/images/ic_invite.png';
-
 
   static const String icBannerClinic1 = 'assets/images/ic_banner_clinic1.png';
   static const String icBannerClinic2 = 'assets/images/ic_banner_clinic2.png';
@@ -78,6 +79,9 @@ class ImageAssetPath {
   static const String icNavProfile = 'assets/svgs/ic_profile.svg';
   static const String icBack = 'assets/svgs/ic_back.svg';
 
-
   //
+  static const String icCopy = 'assets/svgs/ic_copy.svg';
+
+  //GIF
+  static const String loadingDot = 'assets/gifs/loading_dot.gif';
 }

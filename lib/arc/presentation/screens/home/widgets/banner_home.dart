@@ -1,11 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:riverhotel/src/extensions/extension.dart';
 
 import '../../../../../src/constants.dart';
 import '../../../../../src/styles/style.dart';
-import '../../../../../translation_key.dart';
 
 class BannerHome extends StatefulWidget {
   const BannerHome({Key? key}) : super(key: key);
@@ -16,7 +13,7 @@ class BannerHome extends StatefulWidget {
 
 class _BannerHomeState extends State<BannerHome> {
   final CarouselController _controller = CarouselController();
-  int _currentIndex = 0;
+
   final List<String> _listImg = [
     ImageAssetPath.icBanner1,
     ImageAssetPath.icBanner1,
@@ -36,10 +33,7 @@ class _BannerHomeState extends State<BannerHome> {
             autoPlay: true,
             height: Dimens.size140,
             viewportFraction: 0.65,
-            onPageChanged: (index, reason) {
-              _currentIndex = index;
-              setState(() {});
-            },
+            onPageChanged: (index, reason) {},
           ),
           items: _listImg
               .map((i) => ClipRRect(
