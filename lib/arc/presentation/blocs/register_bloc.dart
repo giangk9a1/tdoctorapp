@@ -57,6 +57,7 @@ class RegisterBloc extends BaseCubit<RegisterScreenParam, RegisterScreenModel> {
           emit(latestLoadedState!.copyWith(isShowLoading: false));
         }
       }
+
       emit(latestLoadedState!.copyWith(model: model));
     }
   }

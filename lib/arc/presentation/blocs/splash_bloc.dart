@@ -21,7 +21,7 @@ class SplashBloc extends BaseCubit<SplashScreenParam, SplashScreenModel> {
       await Future.delayed(const Duration(seconds: 2));
       final token = await appPreference.token;
       if (token?.isNotEmpty ?? false) {
-        navigator.pushNamed(RouteKey.main);
+        navigator.pushNamed(RouteKey.doctor);
       } else {
         navigator.pushNamed(RouteKey.intro);
       }

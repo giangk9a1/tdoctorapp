@@ -1,13 +1,12 @@
+import '../../../../data/models/response_models/doctor_response_model.dart';
 import '../doctor.dart';
 
 class ProfileButtons extends StatelessWidget {
-  const ProfileButtons({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
+  const ProfileButtons({Key? key, required this.size, required this.data})
+      : super(key: key);
 
   final Size size;
-
+  final Data? data;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,8 +51,8 @@ class ProfileButtons extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: ElevatedButton(
-              child:
-                  Text('CHAT VỚI THẠC SĨ - BÁC SĨ NỘI TRÚ LÊ THỊ PHƯƠNG THẢO'),
+              child: Text(
+                  'CHAT VỚI ${data?.doctorName?.toUpperCase() ?? 'THẠC SĨ - BÁC SĨ NỘI TRÚ LÊ THỊ PHƯƠNG THẢO'}'),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 elevation: 0,

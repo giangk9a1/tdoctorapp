@@ -23,13 +23,15 @@ class AppRoutes {
         return _materialRoute(const RegisterScreen());
       case RouteKey.intro:
         return _materialRoute(const IntroScreen());
+      case RouteKey.doctor:
+        return _materialRoute(const DoctorScreen());
       default:
         return _materialRoute(const PageNotFound());
     }
   }
 
   static List<Route> onGenerateInitialRoute() {
-    return [_materialRoute(const DoctorScreen())];
+    return [_materialRoute(const SplashScreen())];
   }
 
   static Route<dynamic> _materialRoute(Widget view) {

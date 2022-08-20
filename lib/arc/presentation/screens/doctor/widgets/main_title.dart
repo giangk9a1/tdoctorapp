@@ -1,17 +1,15 @@
 import '../doctor.dart';
 
 class MainTitle extends StatelessWidget {
-  const MainTitle({
-    Key? key,
-  }) : super(key: key);
-
+  MainTitle({Key? key, required this.title}) : super(key: key);
+  String title;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: Text(
-            'Thạc sĩ - Bác sĩ nội trú Lê Phương Thảo',
+            title,
             style: Theme.of(context)
                 .textTheme
                 .headline4!

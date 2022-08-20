@@ -1,18 +1,44 @@
+import 'package:riverhotel/arc/data/models/models.dart';
+import 'package:riverhotel/arc/data/models/response_models/doctor_response_model.dart';
+import 'package:riverhotel/arc/presentation/blocs/doctor_profile_bloc.dart';
+import 'package:riverhotel/arc/presentation/models/doctor_profile/doctor_profile_model.dart';
+import 'package:riverhotel/src/base_widget_state/base_cubit_stateful_widget.dart';
+
 import 'doctor.dart';
 
-class DoctorScreen extends StatefulWidget {
+class DoctorScreen extends BaseCubitStatefulWidget {
   const DoctorScreen({Key? key}) : super(key: key);
 
   @override
   State<DoctorScreen> createState() => _DoctorScreenState();
 }
 
-class _DoctorScreenState extends State<DoctorScreen> {
+class _DoctorScreenState
+    extends BaseCubitStateFulWidgetState<DoctorProfileBloc, DoctorScreen> {
   int currentIndex = 0;
+  int doctorId = 90201;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    bloc.getDoctorProfile(doctorId);
+  }
+
+  double _calculateRating(List<dynamic> rating) {
+    if (rating.isEmpty) {
+      return 5.0;
+    }
+    double sum = 0;
+    rating.forEach((element) {
+      sum += double.parse(element['number_star']);
+    });
+    return sum / 5;
+  }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildContent(BuildContext context, state) {
     final size = MediaQuery.of(context).size;
+    final model = state.model as DoctorProfileModel;
     return Scaffold(
         appBar: AppBar(
           title: Text("Thông tin"),
@@ -58,34 +84,37 @@ class _DoctorScreenState extends State<DoctorScreen> {
             SizedBox(
               height: 30,
             ),
-            MainTitle(),
+            MainTitle(title: model.doctor?.data?.doctorName ?? "Unknown"),
             SizedBox(
               height: size.height * 0.08,
             ),
-            Information(size: size),
+            Information(size: size, data: model.doctor?.data),
             SizedBox(
               height: size.height * 0.03,
             ),
-            ProfileButtons(size: size),
+            ProfileButtons(size: size, data: model.doctor?.data),
             SizedBox(
               height: size.height * 0.03,
             ),
             Container(
-              height: 300,
+              height: 500,
               width: 500,
               child: Column(
                 children: [
                   _getNavigationButtons(),
-                  _getStackedContainers(),
+                  _getStackedContainers(model.doctor),
                 ],
               ),
             ),
-            CommentSection(size: size),
+            CommentSection(
+              size: size,
+              doctorName: model.doctor?.data?.doctorName ?? 'unknown',
+            ),
           ]),
         ));
   }
 
-  Widget _getStackedContainers() {
+  Widget _getStackedContainers(DoctorResponseModel? data) {
     return Expanded(
       child: IndexedStack(
         index: currentIndex,
@@ -93,9 +122,38 @@ class _DoctorScreenState extends State<DoctorScreen> {
           Text('Không có thông báo nào từ bác sĩ'),
           Container(),
           Container(
-            color: Colors.green,
-            height: 300,
+            height: 700,
             width: 300,
+            child: Column(
+              children: [
+                Text(
+                  'Quá trình đào tạo',
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text('${data?.data?.doctorDescription}'),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Chuyên khám và điều trị:',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                      '${data?.data?.doctorspeciality?.speciality?.specialityDesc}'),
+                ),
+              ],
+            ),
           ),
           Text('Bạn hãy là người đầu tiên hỏi bác sĩ'),
         ],

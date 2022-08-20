@@ -5,4 +5,5 @@ class RouteKey {
   static const String login = "/login";
   static const String invite = "/invite";
   static const String register = "/register";
+  static const String doctor = "/doctor";
 }

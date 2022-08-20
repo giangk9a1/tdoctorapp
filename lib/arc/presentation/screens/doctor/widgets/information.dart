@@ -1,12 +1,23 @@
+import '../../../../data/models/response_models/doctor_response_model.dart';
 import '../doctor.dart';
 
 class Information extends StatelessWidget {
-  const Information({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
+  const Information({Key? key, required this.size, required this.data})
+      : super(key: key);
 
   final Size size;
+  final Data? data;
+
+  int _calculateRating(List<dynamic> rating) {
+    if (rating.isEmpty) {
+      return 5;
+    }
+    int sum = 0;
+    rating.forEach((element) {
+      sum += int.parse(element['number_star']);
+    });
+    return sum ~/ 5;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +27,7 @@ class Information extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'TDOCTOR: 90213',
+            'Tdoctor: ${data?.doctorId ?? "90123"}',
             style: Theme.of(context)
                 .textTheme
                 .headline4!
@@ -24,14 +35,15 @@ class Information extends StatelessWidget {
           ),
           Expanded(
               child: Image.network(
-            'https://cdn.bookingcare.vn/fr/w1200/2020/12/21/102227-bs-le-thi-phuong-thao.jpg',
+            'https://tdoctor.vn/public/images/doctor/${data?.profileImage ?? 'drlethiphuongthao.jpg'}',
           )),
           RatingBar.builder(
             initialRating: 3,
             minRating: 1,
             direction: Axis.horizontal,
             allowHalfRating: true,
-            itemCount: 5,
+            ignoreGestures: true,
+            itemCount: _calculateRating(data?.rating ?? []),
             itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
             itemBuilder: (context, _) => Icon(
               Icons.star,

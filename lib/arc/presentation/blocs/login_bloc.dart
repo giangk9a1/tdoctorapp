@@ -61,7 +61,7 @@ class LoginBloc extends BaseCubit<LoginScreenParam, LoginScreenModel> {
         if (loginResponseModel.success ?? false) {
           ToastView.show("Login succcesss");
           appPreference.setToken(loginResponseModel.data?.token);
-          navigator.pushNamedAndRemoveUntil(RouteKey.main);
+          navigator.pushNamedAndRemoveUntil(RouteKey.doctor);
         } else {
           ToastView.show(loginResponseModel.detail ?? '');
         }

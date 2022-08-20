@@ -4,10 +4,11 @@ class CommentSection extends StatelessWidget {
   const CommentSection({
     Key? key,
     required this.size,
+    required this.doctorName,
   }) : super(key: key);
 
   final Size size;
-
+  final String? doctorName;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +25,7 @@ class CommentSection extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  'NHẬN XÉT VỀ THẠC SĨ - BÁC SĨ NỘI TRÚ LÊ THỊ PHƯƠNG THẢO',
+                  'NHẬN XÉT VỀ ${doctorName?.toUpperCase()}',
                   style: Theme.of(context)
                       .textTheme
                       .headline5!
