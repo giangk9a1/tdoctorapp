@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverhotel/arc/data/models/data_models/data_models.dart';
 import 'package:riverhotel/arc/presentation/screens/auth/auth.dart';
+import 'package:riverhotel/arc/presentation/screens/doctor/doctor_screen.dart';
 import 'package:riverhotel/arc/presentation/screens/main/main_screen.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/common.dart';
 
@@ -28,7 +29,7 @@ class AppRoutes {
   }
 
   static List<Route> onGenerateInitialRoute() {
-    return [_materialRoute(const SplashScreen())];
+    return [_materialRoute(const DoctorScreen())];
   }
 
   static Route<dynamic> _materialRoute(Widget view) {
