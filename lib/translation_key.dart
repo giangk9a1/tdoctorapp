@@ -25,4 +25,6 @@ class TranslationKey {
   static const menuAppointment = 'menu_appointment';
   static const menuDrugstore = 'menu_drugstore';
   static const menuHealth = 'menu_health';
+  static const choosespecialty ='choose_specialty';
+  static const choosespecialtytitle= 'choose_specialty_title';
 }

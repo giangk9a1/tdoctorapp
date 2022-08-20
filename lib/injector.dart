@@ -1,5 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:riverhotel/arc/data/services/dortor_service.dart';
 import 'package:riverhotel/arc/presentation/blocs/blocs.dart';
+import 'package:riverhotel/arc/presentation/blocs/doctor_bloc.dart';
 import 'package:riverhotel/arc/presentation/blocs/register_bloc.dart';
 
 import 'package:riverhotel/src/network/network.dart';
@@ -27,6 +29,7 @@ class AppDependencies {
 
   static void _initServices() {
     injector.registerLazySingleton<AuthService>(() => AuthService(injector()));
+    injector.registerLazySingleton<DoctorService>(() => DoctorService(injector()));
   }
 
   static void _initBlocs() {
@@ -35,5 +38,6 @@ class AppDependencies {
     injector.registerFactory<SplashBloc>(() => SplashBloc());
     injector.registerFactory<LoginBloc>(() => LoginBloc(injector()));
     injector.registerFactory<RegisterBloc>(() => RegisterBloc(injector()));
+    injector.registerFactory<DoctorBloc>(() => DoctorBloc(injector()));
   }
 }

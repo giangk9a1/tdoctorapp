@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:riverhotel/arc/presentation/models/models.dart';
+import 'package:riverhotel/arc/presentation/screens/list_doctor/list_doctor_screen.dart';
 import 'package:riverhotel/arc/presentation/screens/screens.dart';
 import 'package:riverhotel/src/constants.dart';
 import 'package:riverhotel/src/styles/style.dart';
@@ -27,6 +28,7 @@ class _MainScreenState
     const HomeScreen(),
     const ChatScreen(),
     Container(),
+    const ListDoctorScreen(),
     const ProfileScreen(),
   ];
 
