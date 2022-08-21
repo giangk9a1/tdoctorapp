@@ -36,7 +36,7 @@ class _LoginScreenState
         appPreference.username.then(
             (value) => _phoneController.text = value ?? _phoneController.text);
         appPreference.password.then((value) =>
-            _passwordController.text = value ?? _phoneController.text);
+            _passwordController.text = value ?? _passwordController.text);
       }
     }
   }
@@ -46,6 +46,7 @@ class _LoginScreenState
     final size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
     final model = state.model as LoginScreenModel;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.primaryColor,

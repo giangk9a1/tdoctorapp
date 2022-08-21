@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:riverhotel/arc/presentation/models/models.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/dialog.dart';
 import 'package:riverhotel/src/config/route_keys.dart';
@@ -5,6 +7,7 @@ import 'package:riverhotel/src/utilities/utilities.dart';
 import 'package:riverhotel/src/validators/validators.dart';
 
 import '../../../src/bloc/bloc.dart';
+import '../../../static_variable.dart';
 import '../../data/models/models.dart';
 import '../../data/services/services.dart';
 
@@ -48,6 +51,9 @@ class RegisterBloc extends BaseCubit<RegisterScreenParam, RegisterScreenModel> {
           if (loginResponseModel.success ?? false) {
             ToastView.show("Register succcesss");
             appPreference.setToken(loginResponseModel.data?.token);
+            appPreference.setUserInfo(
+                jsonEncode(loginResponseModel.data?.currentUser?.toJson()));
+            StaticVariable.user = loginResponseModel.data?.currentUser;
             navigator.pushNamedAndRemoveUntil(RouteKey.main);
           } else {
             ToastView.show(loginResponseModel.detail ?? '');

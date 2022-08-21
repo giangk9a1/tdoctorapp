@@ -22,6 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 msg: "Log out",
                 onTap: () async {
                   appPreference.setToken('');
+                  appPreference.setUserInfo('');
                   navigator.pushNamedAndRemoveUntil(RouteKey.intro);
                 }),
             child: Text("Log out")),

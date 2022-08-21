@@ -27,12 +27,14 @@ class AppDependencies {
 
   static void _initServices() {
     injector.registerLazySingleton<AuthService>(() => AuthService(injector()));
+    injector.registerLazySingleton<ChatService>(() => ChatService(injector()));
   }
 
   static void _initBlocs() {
     injector.registerFactory<ThemeBloc>(() => ThemeBloc());
     injector.registerFactory<MainBloc>(() => MainBloc());
     injector.registerFactory<SplashBloc>(() => SplashBloc());
+    injector.registerFactory<ChatBloc>(() => ChatBloc(injector()));
     injector.registerFactory<LoginBloc>(() => LoginBloc(injector()));
     injector.registerFactory<RegisterBloc>(() => RegisterBloc(injector()));
   }

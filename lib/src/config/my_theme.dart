@@ -45,6 +45,18 @@ class MyTheme {
       ),
       // Text
       primaryTextTheme: const TextTheme(
+          headline6: TextStyle(
+            fontFamily: roboto,
+            color: MyColors.black,
+            fontSize: Dimens.textSize14,
+            fontWeight: FontWeight.w400,
+          ),
+          headline2: TextStyle(
+            fontFamily: roboto,
+            color: MyColors.colorText,
+            fontSize: Dimens.textSize14,
+            fontWeight: FontWeight.w700,
+          ),
           bodyText1: TextStyle(
             fontFamily: roboto,
             color: MyColors.colorBTN,
@@ -86,8 +98,14 @@ class MyTheme {
         headline2: TextStyle(
           fontFamily: roboto,
           color: MyColors.colorBTN,
-          fontSize: Dimens.textSize17,
-          fontWeight: FontWeight.w500,
+          fontSize: Dimens.textSize18,
+          fontWeight: FontWeight.w700,
+        ),
+        headline6: TextStyle(
+          fontFamily: roboto,
+          color: MyColors.whiteColor,
+          fontSize: Dimens.textSize14,
+          fontWeight: FontWeight.w400,
         ),
         headline3: TextStyle(
           fontFamily: roboto,
@@ -97,9 +115,9 @@ class MyTheme {
         ),
         headline5: TextStyle(
           fontFamily: roboto,
-          color: MyColors.colorBTN,
-          fontSize: Dimens.textSize17,
-          fontWeight: FontWeight.w300,
+          color: MyColors.colorText,
+          fontSize: Dimens.textSize12,
+          fontWeight: FontWeight.w400,
         ),
         subtitle1: TextStyle(
           fontFamily: roboto,

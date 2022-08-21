@@ -23,6 +23,7 @@ class PreferenceKeys {
   static const String remember = 'REMEMBER';
   static const String username = 'USERNAME';
   static const String password = 'PASSWORD';
+  static const String userInfo = 'USERINFO';
 }
 
 class ImageAssetPath {
@@ -60,6 +61,8 @@ class ImageAssetPath {
   static const String icNavProfile = 'assets/svgs/ic_profile.svg';
   static const String icBack = 'assets/svgs/ic_back.svg';
   static const String icCopy = 'assets/svgs/ic_copy.svg';
+  static const String icSend = 'assets/svgs/ic_send.svg';
+  static const String icGallery = 'assets/svgs/ic_gallery.svg';
 
   //GIF
   static const String loadingDot = 'assets/gifs/loading_dot.gif';

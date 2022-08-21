@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:riverhotel/arc/presentation/models/models.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/dialog.dart';
 import 'package:riverhotel/src/config/route_keys.dart';
 import 'package:riverhotel/src/utilities/utilities.dart';
 import 'package:riverhotel/src/validators/validators.dart';
+import 'package:riverhotel/static_variable.dart';
 
 import '../../../src/bloc/bloc.dart';
 import '../../data/models/models.dart';
@@ -61,6 +64,9 @@ class LoginBloc extends BaseCubit<LoginScreenParam, LoginScreenModel> {
         if (loginResponseModel.success ?? false) {
           ToastView.show("Login succcesss");
           appPreference.setToken(loginResponseModel.data?.token);
+          appPreference.setUserInfo(
+              jsonEncode(loginResponseModel.data?.currentUser?.toJson()));
+          StaticVariable.user = loginResponseModel.data?.currentUser;
           navigator.pushNamedAndRemoveUntil(RouteKey.main);
         } else {
           ToastView.show(loginResponseModel.detail ?? '');

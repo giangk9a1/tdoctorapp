@@ -35,4 +35,9 @@ class AppPreference extends BasePreference {
 
   Future setPassword(String value) async =>
       await setLocal(PreferenceKeys.password, value);
+
+  Future<String?> get userInfo async => await getLocal(PreferenceKeys.userInfo);
+
+  Future setUserInfo(String value) async =>
+      await setLocal(PreferenceKeys.userInfo, value);
 }

@@ -15,6 +15,7 @@ class MyColors {
   static const Color colorStepper = Color.fromRGBO(132, 204, 22, 1);
   static const Color purple = Color.fromRGBO(93, 10, 106, 1);
   static const Color colorPurple = Color.fromRGBO(161, 131, 185, 1);
+  static const Color colorText = Color.fromRGBO(27, 29, 44, 1);
 
   static const Color purpleBold = Color.fromRGBO(57, 4, 98, 1);
   static const Color yellow = Color.fromRGBO(251, 176, 59, 1);
@@ -22,13 +23,13 @@ class MyColors {
   static const Color colorGradient = Color.fromRGBO(134, 38, 118, 1);
   static const Color colorGradientEnd = Color.fromRGBO(2, 34, 64, 1);
 
-  static const Color blue = Color.fromRGBO(45, 156, 219, 1);
+  static const Color blue = Color.fromRGBO(240, 245, 250, 1);
   static const Color blueBold = Color.fromRGBO(31, 43, 108, 1);
 
   static const Color backgroundIconColor = Color.fromRGBO(223, 243, 231, 1);
   static const Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);
 
-  static const Color colorBTN = Color.fromRGBO(2, 34, 64, 1);
+  static const Color colorBTN = Color.fromRGBO(27, 29, 44, 1);
   static const Color switchColor = Color.fromRGBO(225, 221, 248, 1);
   static const Color textDark = Color.fromRGBO(73, 71, 80, 1);
   static const Color lightButton = Color.fromRGBO(245, 246, 250, 1);
