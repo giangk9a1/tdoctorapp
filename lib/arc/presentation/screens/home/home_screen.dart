@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverhotel/arc/presentation/screens/chat/chat.dart';
 import 'package:riverhotel/arc/presentation/widgets/commons/common.dart';
 import 'package:riverhotel/src/config/route_keys.dart';
 import 'package:riverhotel/src/constants.dart';
@@ -102,17 +103,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           ItemMenu(
-                            onTap: () {},
+                            onTap: () => navigator.pushNamed(RouteKey.choose,
+                                arguments: {"module": '1'}),
                             image: ImageAssetPath.icDoctorHome,
                             text: TranslationKey.menuHome.tr(),
                           ),
                           ItemMenu(
-                            onTap: () {},
+                            onTap: () => navigator.pushNamed(
+                                RouteKey.getListDoctor,
+                                arguments: {"isChat": true}),
                             image: ImageAssetPath.icDoctorVideo,
                             text: TranslationKey.menuVideo.tr(),
                           ),
                           ItemMenu(
-                            onTap: () {},
+                            onTap: () => navigator.pushNamed(
+                                RouteKey.getListDoctor,
+                                arguments: {"isChat": true}),
                             image: ImageAssetPath.icDoctorChat,
                             text: TranslationKey.menuChat.tr(),
                           ),
@@ -122,7 +128,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           ItemMenu(
-                            onTap: () {},
+                            onTap: () => navigator.pushNamed(RouteKey.choose,
+                                arguments: {"module": '2'}),
                             image: ImageAssetPath.icAppointment,
                             text: TranslationKey.menuAppointment.tr(),
                           ),

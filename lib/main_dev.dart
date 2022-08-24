@@ -13,7 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   AppConfig().setAppConfig(
     appEnvironment: AppEnvironment.DEV,
-    apiEndpoint: 'https://dev.tdoctor.vn/',
+    apiEndpoint: 'https://tdoctor.vn/',
   );
   // await Firebase.initializeApp();
   BlocOverrides.runZoned(

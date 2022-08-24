@@ -4,3 +4,6 @@ export 'chat/chat.dart';
 export 'main/main.dart';
 export 'home/home.dart';
 export 'profile/profile.dart';
+export 'doctor/doctor.dart';
+export 'choose/choose.dart';
+export 'appointment/appointment.dart';

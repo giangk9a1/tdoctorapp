@@ -80,7 +80,7 @@ class AppClient {
       ..options.headers = {"Content-Type": "multipart/form-data"};
     if (useIDToken) {
       final token = await appPreference.token;
-      if (token != null) dio.options.headers["Tdoctor-Token"] = token;
+      if (token != null) dio.options.headers["AppSTDV-Token"] = token;
     }
 
     if (kDebugMode) {

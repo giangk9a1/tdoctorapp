@@ -22,5 +22,9 @@
     "menu_chat": "Chat miễn phí \nvới bác sĩ",
     "menu_appointment": "Đặt hẹn tại \nphòng khám",
     "menu_drugstore": "Nhà thuốc \ntrực tuyến",
-    "menu_health": "Theo dõi \nsức khoẻ"
+    "menu_health": "Theo dõi \nsức khoẻ",
+    "choose_province": "Chọn tỉnh thành",
+    "choose_speciality": "Chọn chuyên khoa",
+    "clinic": "Cơ sở y tế",
+    "doctor": "Bác sĩ"
 }

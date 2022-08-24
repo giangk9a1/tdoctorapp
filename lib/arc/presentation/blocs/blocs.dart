@@ -3,3 +3,7 @@ export 'main_bloc.dart';
 export 'login_bloc.dart';
 export 'splash_bloc.dart';
 export 'chat_bloc.dart';
+export 'doctor_bloc.dart';
+export 'choose_bloc.dart';
+export 'clinic_bloc.dart';
+export 'appointment_bloc.dart';

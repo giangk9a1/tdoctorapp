@@ -1,7 +1,11 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:riverhotel/arc/data/models/response_models/login_response_model.dart';
+import 'package:riverhotel/arc/data/models/response_models/province.dart';
+import 'package:riverhotel/arc/data/services/province_service.dart';
 import 'package:riverhotel/arc/presentation/models/models.dart';
+import 'package:riverhotel/src/utilities/logger.dart';
 import 'package:riverhotel/static_variable.dart';
 
 import '../../../src/bloc/bloc.dart';
@@ -34,5 +38,17 @@ class SplashBloc extends BaseCubit<SplashScreenParam, SplashScreenModel> {
         navigator.pushNamed(RouteKey.intro);
       }
     }
+  }
+
+  fetchProvinces(BuildContext context) async {
+    emit(latestLoadedState!.copyWith(isShowLoading: true));
+    final info = await ProvinceService.initData(context);
+    info.forEach((element) {
+      Province province = Province.fromJson(element);
+      StaticVariable.provinces.add(province);
+    });
+    print("CHECKOUT");
+    LoggerUtils.d(StaticVariable.provinces[0].name);
+    emit(latestLoadedState!.copyWith(isShowLoading: false, model: model));
   }
 }

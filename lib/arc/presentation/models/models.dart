@@ -4,3 +4,6 @@ export 'auth/login_model.dart';
 export 'auth/register_model.dart';
 export 'splash/splash_model.dart';
 export 'chat/chat_model.dart';
+export 'doctor/doctor_model.dart';
+export 'choose/choose_model.dart';
+export 'appointment/appointment_model.dart';

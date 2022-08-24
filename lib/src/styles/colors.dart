@@ -25,6 +25,7 @@ class MyColors {
 
   static const Color blue = Color.fromRGBO(240, 245, 250, 1);
   static const Color blueBold = Color.fromRGBO(31, 43, 108, 1);
+  static const Color blue1 = Color.fromRGBO(212, 232, 253, 1);
 
   static const Color backgroundIconColor = Color.fromRGBO(223, 243, 231, 1);
   static const Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);
@@ -53,6 +54,7 @@ class MyColors {
 
   static const Color gray1 = Color.fromRGBO(128, 140, 149, 1);
   static const Color gray2 = Color.fromRGBO(238, 238, 238, 1);
+  static const Color gray3 = Color.fromRGBO(58, 80, 136, 0.1);
 
   static const Color primaryColorLight = Color.fromRGBO(66, 69, 72, 1);
   static const Color primaryColorDark = Color.fromRGBO(9, 18, 28, 1);

@@ -17,6 +17,15 @@ class SplashScreen extends BaseCubitStatefulWidget {
 class _SplashScreenState
     extends BaseCubitStateFulWidgetState<SplashBloc, SplashScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration.zero).then((value) {
+      bloc.fetchProvinces(context);
+    });
+  }
+
+  @override
   Widget buildContent(BuildContext context, state) {
     final theme = Theme.of(context);
     return Container(
